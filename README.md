@@ -1,5 +1,5 @@
 # Day-Planner
-
+creating a work day planner using jquery and bootstrap
 
 
 
