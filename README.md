@@ -32,4 +32,9 @@ THEN the saved events persist
 
 ## Screenshot 
 
-![screenshot of the landing page]()
+![screenshot of the landing page](https://github.com/ScottLRay/Day-Planner/blob/main/assets/images/screenshot.png)
+
+
+
+## Git Hub pages link 
+https://scottlray.github.io/Day-Planner/

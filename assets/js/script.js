@@ -3,6 +3,7 @@ $(document).ready(function () {
   const today = moment().format("MMM Do, YYYY");
   $("#currentDay").text(today);
   // using moment to get the current hour
+  //parseInt(+moment().format("H"))?
   let currentHour = +moment().format("H");
 
   //linking to the html side
@@ -10,7 +11,7 @@ $(document).ready(function () {
 
   
   // a for loop, looping over numbers from 5 to 17
-  for (let i = 5; i <= 17; i++) {
+  for (let i = 7; i <= 17; i++) {
     $timeSlots.append(buildTimeSlot(i));
   }
 
@@ -42,18 +43,30 @@ $(document).ready(function () {
     
   }
 
-   var description = document.querySelectorAll(".description")
+  
   // save the endusers entrys
   $(".saveBtn").on("click", function (e) {
     e.preventDefault();
-    localStorage.setItem("description", JSON.stringify(description));
+    var time = $(this).parent().attr("id")
+    var description = $(this).siblings(".description").val()
+    localStorage.setItem(time, description);
     
   });
-  console.log(localStorage);
+  
 
+//retieve the enduser endput and put it on the page and leave it there 
+    $(".time-block").each (function(){
 
-// localStorage.getItem("description", JSON.parse(val))
+      var storedDescription = localStorage.getItem(id)
+      var id = $(this).attr("id")
+   
+      $(this).children(id).val(storedDescription) 
+      var timeSlots = id.replace("hour-", "")
+      localStorage.getItem(storedDescription, timeSlots)
+    })
 
+  
+  
 
 });
 
